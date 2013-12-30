@@ -1112,7 +1112,7 @@ static int Control( demux_t *p_demux, int i_query, va_list args )
         {
             if( DVBEventInformation( p_demux, pi64, NULL ) )
             {
-                *pi64 = 0;
+                *pi64 = stream_Time( p_demux->s );
             }
         }
         else
@@ -1129,7 +1129,7 @@ static int Control( demux_t *p_demux, int i_query, va_list args )
         {
             if( DVBEventInformation( p_demux, NULL, pi64 ) )
             {
-                *pi64 = 0;
+                *pi64 = stream_Duration( p_demux->s );
             }
         }
         else
